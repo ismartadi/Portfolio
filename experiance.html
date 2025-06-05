@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adhi | Experience</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <style>
+    /* Reset & Base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fafafa;
+      color: #333;
+      line-height: 1.5;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    .dark-mode {
+      background: #121212;
+      color: #ddd;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #00c3ff;
+    }
+
+    /* Header */
+    header {
+      background: #0a0a0a;
+      color: #eee;
+      padding: 0.8rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+    header h1 span {
+      color: #00c3ff;
+    }
+    nav a {
+      margin-left: 1rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #aaa;
+      transition: color 0.3s ease;
+    }
+    nav a.active,
+    nav a:hover {
+      color: #00c3ff;
+      font-weight: 700;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* THEME TOGGLE - ORIGINAL, no style changes */
+    #themeToggle {
+      cursor: pointer;
+      border: none;
+      background: none;
+      width: 32px;
+      height: 32px;
+      outline: none;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+    }
+
+    /* Page Title */
+    h2.page-title {
+      font-weight: 700;
+      font-size: 2.1rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      color: #0076ff;
+    }
+    .dark-mode h2.page-title {
+      color: #00c3ff;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      margin-left: 20px;
+      padding-left: 20px;
+      border-left: 3px solid #00c3ff;
+    }
+    .dark-mode .timeline {
+      border-left-color: #00c3ff;
+    }
+
+    /* Experience Card - Reduced size */
+    .exp-card {
+      background: white;
+      margin-bottom: 1.4rem;
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 195, 255, 0.12);
+      position: relative;
+      transition: box-shadow 0.3s ease;
+      font-size: 0.9rem;
+    }
+    .exp-card:hover {
+      box-shadow: 0 8px 20px rgba(0, 195, 255, 0.25);
+    }
+    .dark-mode .exp-card {
+      background: #1c1c1c;
+      box-shadow: 0 4px 10px rgba(0, 195, 255, 0.3);
+    }
+
+    /* Dot on timeline */
+    .exp-card::before {
+      content: '';
+      position: absolute;
+      left: -30px;
+      top: 15px;
+      width: 12px;
+      height: 12px;
+      background: #00c3ff;
+      border-radius: 50%;
+      box-shadow: 0 0 7px #00c3ff;
+      transition: background 0.3s ease;
+    }
+    .dark-mode .exp-card::before {
+      background: #00c3ff;
+      box-shadow: 0 0 9px #00c3ff;
+    }
+
+    /* Experience Header */
+    .exp-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 5px;
+    }
+    .exp-icon {
+      font-size: 1.3rem;
+      color: #0076ff;
+      flex-shrink: 0;
+    }
+    .dark-mode .exp-icon {
+      color: #00c3ff;
+    }
+    .exp-role {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #111;
+    }
+    .dark-mode .exp-role {
+      color: #eee;
+    }
+
+    /* Company & Dates */
+    .exp-company {
+      font-weight: 600;
+      color: #555;
+      font-size: 0.85rem;
+      margin-bottom: 1px;
+    }
+    .dark-mode .exp-company {
+      color: #bbb;
+    }
+    .exp-date {
+      font-size: 0.75rem;
+      font-style: italic;
+      color: #777;
+    }
+    .dark-mode .exp-date {
+      color: #999;
+    }
+
+    /* Description */
+    .exp-desc {
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+      color: #333;
+      line-height: 1.35;
+    }
+    .dark-mode .exp-desc {
+      color: #ccc;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .exp-card {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
+      }
+      .exp-role {
+        font-size: 0.9rem;
+      }
+      .exp-icon {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Adhi <span>Portfolio</span></h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="experience.html" class="active">Experience</a>
+      <a href="skills.html">Skills</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <!-- Original toggle button kept as-is, replace with your actual toggle icon or code -->
+    <button id="themeToggle" aria-label="Toggle Dark Mode">
+      <!-- example icon -->
+      <i class="fa-solid fa-moon" style="color:#00c3ff; font-size:18px;"></i>
+    </button>
+  </header>
+
+  <main class="container">
+    <h2 class="page-title">My Experience</h2>
+
+    <section class="timeline" aria-label="Work Experience Timeline">
+
+      <article class="exp-card" tabindex="0">
+        <div class="exp-header">
+          <i class="fa-solid fa-pencil-ruler exp-icon" aria-hidden="true"></i>
+          <h3 class="exp-role">UI/UX Designer</h3>
+        </div>
+        <div class="exp-company">Freelance Projects</div>
+        <div class="exp-date">Jan 2024 – Present</div>
+        <p class="exp-desc">
+          Designed intuitive user interfaces and prototypes for multiple small business websites and mobile apps, boosting user engagement and conversion rates.
+        </p>
+      </article>
+
+      <article class="exp-card" tabindex="0">
+        <div class="exp-header">
+          <i class="fa-solid fa-code exp-icon" aria-hidden="true"></i>
+          <h3 class="exp-role">Web Developer Intern</h3>
+        </div>
+        <div class="exp-company">Tech Solutions Pvt Ltd</div>
+        <div class="exp-date">Jun 2023 – Dec 2023</div>
+        <p class="exp-desc">
+          Developed front-end components and assisted backend PHP development for client websites. Collaborated with designers to deliver responsive and user-friendly applications.
+        </p>
+      </article>
+
+      <article class="exp-card" tabindex="0">
+        <div class="exp-header">
+          <i class="fa-solid fa-paintbrush exp-icon" aria-hidden="true"></i>
+          <h3 class="exp-role">Graphic Designer</h3>
+        </div>
+        <div class="exp-company">Creative Minds Studio</div>
+        <div class="exp-date">Jan 2022 – May 2023</div>
+        <p class="exp-desc">
+          Created branding materials including logos, social media graphics, and marketing collateral for diverse clients across industries.
+        </p>
+      </article>
+
+    </section>
+  </main>
+
+  <footer style="background:#0a0a0a; color:#ccc; text-align:center; padding:1rem 0;">
+    <small>&copy; 2025 Adhi. All rights reserved.</small>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.removeItem('theme');
+      }
+    });
+  </script>
+</body>
+</html>

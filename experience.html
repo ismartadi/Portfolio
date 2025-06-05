@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adhi | Experience</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fefefe;
+  color: #222;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+
+header {
+  background: #111;
+  color: #fff;
+  padding: 1rem 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 20px;
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header h1 span {
+  color: #00c3ff;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+nav a:hover,
+nav a.active {
+  color: #00c3ff;
+}
+
+.theme-toggle {
+  appearance: none;
+  width: 50px;
+  height: 26px;
+  background: #ccc;
+  border-radius: 26px;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  margin-left: 1rem;
+}
+
+.theme-toggle::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s ease;
+}
+
+.dark-mode .theme-toggle {
+  background: #00c3ff;
+}
+
+.dark-mode .theme-toggle::before {
+  transform: translateX(24px);
+}
+
+main {
+  padding: 2rem;
+}
+
+#experience-section {
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.experience-item {
+  background: #f0f0f0;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+.dark-mode .experience-item {
+  background: #1e1e1e;
+}
+
+.experience-item h3 {
+  margin: 0;
+  color: #0076ff;
+}
+
+.dark-mode .experience-item h3 {
+  color: #ffd700;
+}
+
+.experience-item p {
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+  .nav-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-wrapper">
+      <h1>Adhi <span>Portfolio</span></h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html" class="active">Experience</a>
+        <a href="skills.html">Skills</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode"></button>
+    </div>
+  </header>
+
+  <main>
+    <section id="experience-section">
+      <h2>My Experience</h2>
+
+      <div class="experience-item">
+        <h3>UI/UX Design Intern – 10 Days</h3>
+        <p>Successfully completed a 10-day internship focused on practical UX design, user research, and interface prototyping. Received positive feedback for outstanding creative contributions.</p>
+      </div>
+
+      <div class="experience-item">
+        <h3>15-Day Internship Program</h3>
+        <p>Completed a structured 15-day UI/UX design program where I gained hands-on skills in wireframing, user persona development, and UI principles. Trainer praised my app designs for clarity and innovation.</p>
+      </div>
+
+      <div class="experience-item">
+        <h3>Freelance Projects</h3>
+        <p>Worked on multiple freelance website and mobile UI designs, including e-commerce and service-based apps. Designed with mobile responsiveness, clean layouts, and interactive flows in mind.</p>
+      </div>
+    </section>
+  </main>
+
+  
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+    }
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.removeItem('theme');
+      }
+    });
+  </script>
+</body>
+</html>

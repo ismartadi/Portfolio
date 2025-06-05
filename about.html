@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Adhi</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fefefe;
+      color: #222;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+    .dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+    header {
+      background: #111;
+      color: #fff;
+      padding: 1rem 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 20px;
+    }
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header h1 span {
+      color: #00c3ff;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #00c3ff;
+    }
+    .theme-toggle {
+      appearance: none;
+      width: 50px;
+      height: 26px;
+      background: #ccc;
+      border-radius: 26px;
+      position: relative;
+      cursor: pointer;
+      border: none;
+      margin-left: 1rem;
+    }
+    .theme-toggle::before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      top: 3px;
+      left: 3px;
+      transition: transform 0.3s ease;
+    }
+    .dark-mode .theme-toggle {
+      background: #00c3ff;
+    }
+    .dark-mode .theme-toggle::before {
+      transform: translateX(24px);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin: 2rem 0 1rem;
+    }
+
+    .about-section {
+      padding: 3rem 0;
+    }
+    .about-section p {
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      background: #ffd700;
+      color: #111;
+      font-weight: 700;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(255, 215, 0, 0.4);
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background: #e6c200;
+      box-shadow: 0 8px 22px rgba(230, 194, 0, 0.6);
+      color: #222;
+    }
+    .footer {
+      background: #111;
+      color: #ddd;
+      padding: 1rem;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.4rem;
+      }
+      .nav-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav-wrapper">
+      <h1>Adhi <span>Portfolio</span></h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="skills.html">Skills</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode"></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-section" data-aos="fade-up">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>
+          I am a diploma student with a CGPA of 8.5, deeply interested in UI/UX design and development. I’ve worked on several design and web development projects, building both design interfaces and functional applications.
+        </p>
+        <p>
+          My journey includes hands-on internships, certifications, and a strong foundation in core programming languages, which together shape me into a capable and creative problem-solver.
+        </p>
+        <p>
+          Beyond coding, I enjoy exploring the latest design trends, learning new technologies, and collaborating with teams to bring ideas to life. I believe good design can change the world, one interface at a time.
+        </p>
+        <a href="resume.pdf" class="btn" download>Download CV</a>
+      </div>
+    </section>
+  </main>
+
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const themeToggle = document.getElementById('themeToggle');
+const body = document.body;
+
+if (localStorage.getItem('theme') === 'dark') {
+  body.classList.add('dark-mode');
+}
+
+themeToggle.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+  if (body.classList.contains('dark-mode')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.removeItem('theme');
+  }
+});
+
+  </script>
+</body>
+</html>
