@@ -6,7 +6,7 @@
   <title>About | Adhi</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <style>
-    body {
+     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #fefefe;
@@ -91,16 +91,30 @@
 
     .about-section {
       padding: 3rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: left;
+      min-height: 60vh;
     }
+
+    .about-section .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .about-section p {
-      font-size: 1.1rem;
-      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
       line-height: 1.6;
-      max-width: 800px;
+      margin-bottom: 1.2rem;
+      max-width: 600px;
     }
+
     .btn {
       display: inline-block;
-      padding: 0.75rem 2rem;
+      padding: 0.65rem 2rem;
       background: #ffd700;
       color: #111;
       font-weight: 700;
@@ -109,17 +123,13 @@
       box-shadow: 0 6px 18px rgba(255, 215, 0, 0.4);
       transition: all 0.3s ease;
     }
+
     .btn:hover {
       background: #e6c200;
       box-shadow: 0 8px 22px rgba(230, 194, 0, 0.6);
       color: #222;
     }
-    .footer {
-      background: #111;
-      color: #ddd;
-      padding: 1rem;
-      text-align: center;
-    }
+
     @media (max-width: 768px) {
       header h1 {
         font-size: 1.4rem;
@@ -131,6 +141,9 @@
       nav {
         flex-direction: column;
         align-items: flex-start;
+      }
+      .about-section p {
+        text-align: justify;
       }
     }
   </style>
@@ -158,41 +171,41 @@
       <div class="container">
         <h2>About Me</h2>
         <p>
-          I am a diploma student with a CGPA of 8.5, deeply interested in UI/UX design and development. I’ve worked on several design and web development projects, building both design interfaces and functional applications.
+          I am a diploma student with a CGPA of 8.5, passionate about UI/UX design and full-stack development. I've led and contributed to multiple design and web-based projects that focus on both visual appeal and performance.
         </p>
         <p>
-          My journey includes hands-on internships, certifications, and a strong foundation in core programming languages, which together shape me into a capable and creative problem-solver.
+          Through internships and self-learning, I’ve gained hands-on experience in HTML, CSS, JavaScript, React, and Figma. My projects have helped me develop real-world problem-solving skills, from wireframing to coding live applications.
         </p>
         <p>
-          Beyond coding, I enjoy exploring the latest design trends, learning new technologies, and collaborating with teams to bring ideas to life. I believe good design can change the world, one interface at a time.
+          Outside of development, I find joy in sketching, exploring animation principles, and analyzing how user experience impacts human behavior. I’m a strong believer in continuous growth and staying updated with tech trends.
+        </p>
+        <p>
+          I enjoy collaborating with teams and participating in hackathons, where I apply my design and development knowledge to build meaningful solutions under pressure. My mission is to design products that are not only functional but also delightful.
         </p>
         <a href="resume.pdf" class="btn" download>Download CV</a>
       </div>
     </section>
   </main>
 
-  
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init();
 
     const themeToggle = document.getElementById('themeToggle');
-const body = document.body;
+    const body = document.body;
 
-if (localStorage.getItem('theme') === 'dark') {
-  body.classList.add('dark-mode');
-}
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+    }
 
-themeToggle.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
-  if (body.classList.contains('dark-mode')) {
-    localStorage.setItem('theme', 'dark');
-  } else {
-    localStorage.removeItem('theme');
-  }
-});
-
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.removeItem('theme');
+      }
+    });
   </script>
 </body>
 </html>
